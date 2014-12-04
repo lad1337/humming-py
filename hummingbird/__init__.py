@@ -8,7 +8,6 @@ URL_V2 = "https://hummingbird.me/api/v2"
 
 class Client(object):
 
-
     def __init__(self, user_name=None, password=None, v2_token=None):
         self._v2_token = v2_token
         self._user_name = user_name
@@ -54,6 +53,11 @@ class Client(object):
         ]
 
     def anime(self, id):
+        """Get an Anime object.
+
+        id: hummingbird internal id or myanimelist:<MAL-ID>
+
+        """
         url = URL_V1
         if self._v2_token:
             url = URL_V2
